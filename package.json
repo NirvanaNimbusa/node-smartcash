@@ -1,40 +1,33 @@
 {
-  "name": "bitcoin",
-  "description": "Communicate with bitcoind via JSON-RPC",
-  "version": "3.0.1",
+  "name": "node-smartcash",
+  "description": "Communicate with SmartCash Core via JSON-RPC. Forked from https://github.com/freewil/node-bitcoin.",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "keywords": [
-    "bitcoin",
+    "smartcash",
     "rpc"
   ],
-  "author": "Bill Casarin <bill@casarin.ca> (jb55.com)",
+  "author": "Miyako Jones <mjones@swiftlet.technology>",
   "contributors": [
+    "Bill Casarin <bill@casarin.ca>",
     "Sean Lavine <sean@eternalrise.com>"
   ],
   "dependencies": {},
   "devDependencies": {
     "clone": "^1.0.2",
-    "mocha": "^2.3.3",
-    "standard": "^5.3.1"
+    "mocha": "^5.2.0"
   },
   "optionalDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git://github.com/freewil/node-bitcoin.git"
+    "url": "git://github.com/miyakoj/node-smartcash.git"
   },
   "engines": {
     "node": ">= 0.10.0"
   },
-  "scripts": {
-    "pretest": "standard --verbose",
-    "test": "make test"
-  },
   "bugs": {
-    "url": "https://github.com/freewil/node-bitcoin/issues"
+    "url": "https://github.com/miyakoj/node-smartcash/issues"
   },
-  "homepage": "https://github.com/freewil/node-bitcoin#readme",
-  "directories": {
-    "test": "test"
-  },
-  "license": "Unlicense"
+  "homepage": "https://github.com/miyakoj/node-smartcash#readme",
+  "license": "MIT"
 }

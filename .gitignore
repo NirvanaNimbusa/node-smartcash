@@ -1,4 +1,8 @@
 node_modules/
+test/
 test/config.js
 .project
-
+index.js
+.travis.yml
+Dockerfile
+Makefile

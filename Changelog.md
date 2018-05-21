@@ -1,3 +1,12 @@
+# node-smartcash changelog
+
+## v1.0.0 (2018/05/21)
+* Changed license from [Unlicense](https://choosealicense.com/licenses/unlicense/) to [MIT](https://choosealicense.com/licenses/mit/)
+* Updated the callRpc function in jsonrpc.js to allow arrays of command parameters
+* Updated commands.js to include missing SmartCash commands and remove bitcoin-only commands
+* Removed information about sending a batch of RPC calls from the readme (not supported in SmartCash core)
+* Removed information about JSON-RPC over SSL from the readme (not recommended)
+
 # node-bitcoin changelog
 
 ## v3.0.1 (2015/10/25)

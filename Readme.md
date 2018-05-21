@@ -1,104 +1,46 @@
-# node-bitcoin
-[![travis][travis-image]][travis-url]
-[![npm][npm-image]][npm-url]
-[![downloads][downloads-image]][downloads-url]
-[![js-standard-style][standard-image]][standard-url]
+# node-smartcash
 
-[travis-image]: https://travis-ci.org/freewil/node-bitcoin.svg?branch=master
-[travis-url]: https://travis-ci.org/freewil/node-bitcoin
+node-smartcash is based on [node-bitcoin](https://github.com/freewil/node-bitcoin) with modifications to allow an array of parameters and to update the list of API commands (based on the [official SmartCash console commands](https://smartcash.freshdesk.com/support/solutions/articles/35000027144-debug-console-command-line)). You can either use the camelcase method on the `smartcash.Client` object (methods are listed in [lib/commands.js](/lib/commands.js)) or use the `cmd` method directly. More information about JSON-RPC usage for SmartCash core can be found in the [SmartCash config file reference](https://smartcash.freshdesk.com/support/solutions/articles/35000038702-smartcash-conf-configuration-file) (search "JSON-RPC options").
 
-[npm-image]: https://img.shields.io/npm/v/bitcoin.svg?style=flat
-[npm-url]: https://npmjs.org/package/bitcoin
-
-[downloads-image]: https://img.shields.io/npm/dm/bitcoin.svg?style=flat
-[downloads-url]: https://npmjs.org/package/bitcoin
-
-[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat
-[standard-url]: http://standardjs.com
-
-node-bitcoin is a simple wrapper for the Bitcoin client's JSON-RPC API.
-
-If starting a new project, I highly encourage you to take a look at the more modern [bitcoin-core](https://github.com/seegno/bitcoin-core), which features:
-* ES6 support
-* optional promise support
-* support for newer REST API, in addition to RPC methods
-
-The API is equivalent to the API document [here](https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_Calls_list).
-The methods are exposed as lower camelcase methods on the `bitcoin.Client`
-object, or you may call the API directly using the `cmd` method.
+node-smartcash is best used as a dependency in a project that will communicate with a SmartCash Core instance on the same machine. For an example see [SmartSweeper](https://github.com/swiftlettech/smart-sweeper).
 
 ## Install
 
-`npm install bitcoin`
+`npm install node-smartcash`
 
 ## Examples
+
+`const smartcash = require('node-smartcash')`
 
 ### Create client
 ```js
 // all config options are optional
-var client = new bitcoin.Client({
+var client = new smartcash.Client({
   host: 'localhost',
-  port: 8332,
+  port: 9678,
   user: 'username',
   pass: 'password',
   timeout: 30000
 });
 ```
 
-### Get balance across all accounts with minimum confirmations of 6
+### Get the balance across all accounts with a minimum number of 6 confirmations for all transactions
 
 ```js
-client.getBalance('*', 6, function(err, balance, resHeaders) {
+client.getBalance(['*', 6], function(err, response, resHeaders) {
   if (err) return console.log(err);
-  console.log('Balance:', balance);
+  console.log('Balance: ', response);
 });
 ```
 ### Getting the balance directly using `cmd`
 
 ```js
-client.cmd('getbalance', '*', 6, function(err, balance, resHeaders){
+client.cmd('getbalance', ['*', 6], function(err, response, resHeaders){
   if (err) return console.log(err);
-  console.log('Balance:', balance);
-});
-```
-
-### Batch multiple RPC calls into single HTTP request
-
-```js
-var batch = [];
-for (var i = 0; i < 10; ++i) {
-  batch.push({
-    method: 'getnewaddress',
-    params: ['myaccount']
-  });
-}
-client.cmd(batch, function(err, address, resHeaders) {
-  if (err) return console.log(err);
-  console.log('Address:', address);
+  console.log('Balance: ', response);
 });
 ```
 
 ## SSL
-See [Enabling SSL on original client](https://en.bitcoin.it/wiki/Enabling_SSL_on_original_client_daemon).
 
-If you're using this to connect to bitcoind across a network it is highly
-recommended to enable `ssl`, otherwise an attacker may intercept your RPC credentials
-resulting in theft of your bitcoins.
-
-When enabling `ssl` by setting the configuration option to `true`, the `sslStrict`
-option (verifies the server certificate) will also be enabled by default. It is
-highly recommended to specify the `sslCa` as well, even if your bitcoind has
-a certificate signed by an actual CA, to ensure you are connecting
-to your own bitcoind.
-
-```js
-var client = new bitcoin.Client({
-  host: 'localhost',
-  port: 8332,
-  user: 'username',
-  pass: 'password',
-  ssl: true,
-  sslStrict: true,
-  sslCa: fs.readFileSync(__dirname + '/myca.cert')
-});
-```
+It isn't recommended to use JSON-RPC over SSL to connect to a remote SmartCash core instance. See [Enabling SSL on original client](https://en.bitcoin.it/wiki/Enabling_SSL_on_original_client_daemon) for more information.
