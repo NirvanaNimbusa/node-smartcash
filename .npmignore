@@ -4,3 +4,7 @@ test/
 .gitmodules
 .travis.yml
 Dockerfile
+index.js
+.travis.yml
+Dockerfile
+Makefile

@@ -1,6 +1,5 @@
 node_modules/
-test/
-test/config.js
+test/original_tests/
 .project
 index.js
 .travis.yml

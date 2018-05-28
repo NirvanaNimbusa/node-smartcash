@@ -1,6 +1,7 @@
 module.exports = {
   host: 'localhost',
-  port: 19001,
-  user: 'admin1',
-  pass: '123'
+  port: 9678,
+  user: 'rpcusername',
+  pass: 'rpcpassword',
+  timeout: 30000
 };

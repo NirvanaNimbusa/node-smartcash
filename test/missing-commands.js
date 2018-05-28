@@ -1,7 +1,7 @@
 /* global describe, it */
 
 var assert = require('assert')
-var bitcoin = require('../')
+var smartcash = require('../')
 var config = require('./config')
 var commands = require('../lib/commands')
 
@@ -26,7 +26,7 @@ var getHelpCommands = function (client, cb) {
 
 describe('Client Commands', function () {
   it('should have all the commands listed by `help`', function (done) {
-    var client = new bitcoin.Client(config)
+    var client = new smartcash.Client(config)
     getHelpCommands(client, function (err, helpCommands) {
       assert.ifError(err)
 
@@ -38,7 +38,14 @@ describe('Client Commands', function () {
             break
           }
         }
-        assert.ok(found, 'missing command found in `help`: ' + helpCommands[i])
+          
+        // ignore these commands in help because they are hidden
+        // if the wallet isn't encrypted
+        var ignore = ['walletlock', 'walletpassphrase', 'walletpassphrasechange']
+        if (~ignore.indexOf(helpCommands[i]))
+          assert.ok(!found, 'missing command not found in `help`: ' + helpCommands[i])
+        else
+          assert.ok(found, 'missing command found in `help`: ' + helpCommands[i])
       }
 
       done()
@@ -46,7 +53,7 @@ describe('Client Commands', function () {
   })
 
   it('should not have any commands not listed by `help`', function (done) {
-    var client = new bitcoin.Client(config)
+    var client = new smartcash.Client(config)
     getHelpCommands(client, function (err, helpCommands) {
       assert.ifError(err)
 
