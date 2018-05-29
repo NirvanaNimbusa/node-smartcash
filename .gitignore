@@ -1,7 +1,1 @@
 node_modules/
-test/original_tests/
-.project
-index.js
-.travis.yml
-Dockerfile
-Makefile

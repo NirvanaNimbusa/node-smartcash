@@ -84,8 +84,8 @@ describe('General Client Tests', function () {
     })
   })
 
-  /*describe('request timeouts', function () {
-    it('should occur by default after 30000ms', function (done) {
+  describe('request timeouts', function () {
+    it.skip('should occur by default after 30000ms', function (done) {
       this.timeout(31000)
       var request // eslint-disable-line no-unused-vars
       var client = new smartcash.Client({
@@ -106,7 +106,7 @@ describe('General Client Tests', function () {
       })
     })
 
-    it('should be customizable', function (done) {
+    it.skip('should be customizable', function (done) {
       this.timeout(4500)
       var request // eslint-disable-line no-unused-vars
       var client = new smartcash.Client({
@@ -125,7 +125,7 @@ describe('General Client Tests', function () {
         done()
       })
     })
-  })*/
+  })
 })
 
 describe('Client Blockchain Tests', function () {

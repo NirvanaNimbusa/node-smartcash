@@ -1,10 +1,2 @@
 node_modules/
 test/
-.project
-.gitmodules
-.travis.yml
-Dockerfile
-index.js
-.travis.yml
-Dockerfile
-Makefile

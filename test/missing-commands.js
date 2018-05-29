@@ -39,9 +39,9 @@ describe('Client Commands', function () {
           }
         }
           
-        // ignore these commands in help because they are hidden
-        // if the wallet isn't encrypted
-        var ignore = ['walletlock', 'walletpassphrase', 'walletpassphrasechange']
+        // ignore walletlock, walletpassphrase, and walletpassphrasechange in help because they are hidden
+        // if the wallet isn't encrypted and ignore encryptwallet because it's hidden if the wallet is encrypted
+        var ignore = ['encryptwallet', 'walletlock', 'walletpassphrase', 'walletpassphrasechange']
         if (~ignore.indexOf(helpCommands[i]))
           assert.ok(!found, 'missing command not found in `help`: ' + helpCommands[i])
         else
@@ -66,9 +66,9 @@ describe('Client Commands', function () {
           }
         }
 
-        // ignore commands not found in help because they are hidden
-        // if the wallet isn't encrypted
-        var ignore = ['walletlock', 'walletpassphrase', 'walletpassphrasechange']
+        // ignore walletlock, walletpassphrase, and walletpassphrasechange in help because they are hidden
+        // if the wallet isn't encrypted and ignore encryptwallet because it's hidden if the wallet is encrypted
+        var ignore = ['encryptwallet', 'walletlock', 'walletpassphrase', 'walletpassphrasechange']
         if (~ignore.indexOf(commands[i])) {
           assert.ok(!found, 'command found in `help`: ' + commands[i])
         } else {
