@@ -1,8 +1,8 @@
 # node-smartcash changelog
 
 ## v1.1.1 (2018/06/25)
-* Added debug, dumphdinfo, getaddressbalance, getaddressdeltas, getaddressmempool, getaddresstxids, getaddressutxos, getblockhashes, getblockheaders, getgenerate, getspentinfo, importelectrumwallet, instantsendtoaddress, setgenerate, setnetworkactive, smartmining, smartrewards, spork (added in smartcash-1.2.0)
-* Removed addwitnessaddress, generatetoaddress, getmempoolancestors, getmempooldescendants, getmempoolentry, getpoolinfo, importprunedfunds, removeprunedfunds, signmessagewithprivkey (removed in smartcash-1.2.0)
+* Added debug, dumpHdInfo, getAddressBalance, getAddressDeltas, getAddressMempool, getAddressTxids, getAddressUtxos, getBlockHashes, getBlockHeaders, getGenerate, getSpentInfo, importElectrumWallet, instantSendToAddress, setGenerate, setNetworkActive, smartMining, smartRewards, spork (added in smartcash-1.2.0)
+* Removed addWitnessAddress, generateToAddress, getMempoolAncestors, getMempoolDescendants, getMempoolEntry, getPoolInfo, importPrunedFunds, removePrunedFunds, signMessageWithPrivKey (removed in smartcash-1.2.0)
 
 ## v1.1.0 (2018/05/28)
 * Removed SSL support completely (not supported in SmartCash core)
