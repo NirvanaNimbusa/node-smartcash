@@ -1,7 +1,7 @@
 {
   "name": "node-smartcash",
   "description": "Communicate with SmartCash Core via JSON-RPC. Forked from https://github.com/freewil/node-bitcoin.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "lib/index.js",
   "keywords": [
     "smartcash",
