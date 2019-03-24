@@ -1,11 +1,11 @@
 # node-smartcash
-[![npm](https://img.shields.io/badge/npm-1.1.1-blue.svg)](https://npmjs.org/package/node-smartcash)
+[![npm](https://img.shields.io/badge/npm-1.1.2-blue.svg)](https://npmjs.org/package/node-smartcash)
 
 [smartcash 1.2.0+](https://github.com/SmartCash/Core-Smart/releases)
 
-node-smartcash is based on [node-bitcoin](https://github.com/freewil/node-bitcoin) with modifications to disable SSL, to allow an array of command parameters, and to update the list of API commands (based on the [official list of SmartCash console commands](https://smartcash.freshdesk.com/support/solutions/articles/35000027144-debug-console-command-line)). You can either use the CamelCase method on the `smartcash.Client` object (methods are listed in [lib/commands.js](/lib/commands.js)) or use the `cmd` method directly. More information about JSON-RPC usage for SmartCash core can be found in the [SmartCash config file reference](https://smartcash.freshdesk.com/support/solutions/articles/35000038702-smartcash-conf-configuration-file) (search "JSON-RPC options"). More information about a particular command can be found via Help > Debug Window > Console in SmartCash Core by using `help [command]` where [command] is the command in lowercase.
+node-smartcash is based on [node-bitcoin](https://github.com/freewil/node-bitcoin) with modifications to disable SSL, to allow an array of command parameters, and to update the list of API commands (based on the [official list of SmartCash console commands](https://smartcash.freshdesk.com/support/solutions/articles/35000027144-debug-console-command-line)). You can either use the CamelCase method on the `smartcash.Client` object (methods are listed in [lib/commands.js](/lib/commands.js)) or use the `cmd` method directly. More information about JSON-RPC usage for SmartCash core can be found in the [SmartCash config file reference](https://smartcash.freshdesk.com/support/solutions/articles/35000038702-smartcash-conf-configuration-file) (search "JSON-RPC options"). More information about a particular command can be found via Help > Debug Window > Console in SmartCash Core (SmartCash node client) by using `help [command]` where [command] is the command in lowercase.
 
-node-smartcash is best used as a dependency in a project that will communicate with a SmartCash Core (SmartCash node client) instance on the same machine. For an example see [SmartSweeper](https://github.com/swiftlettech/smart-sweeper).
+node-smartcash is best used as a dependency in a project that will communicate with a SmartCash Core instance on the same machine. For an example see [SmartSweeper](https://github.com/swiftlettech/smart-sweeper).
 
 ## Install
 
