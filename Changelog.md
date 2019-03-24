@@ -1,5 +1,8 @@
 # node-smartcash changelog
 
+## v1.1.2 (2019/03/24)
+* Added getRandomKeyPair
+
 ## v1.1.1 (2018/06/25)
 * Added debug, dumpHdInfo, getAddressBalance, getAddressDeltas, getAddressMempool, getAddressTxids, getAddressUtxos, getBlockHashes, getBlockHeaders, getGenerate, getSpentInfo, importElectrumWallet, instantSendToAddress, setGenerate, setNetworkActive, smartMining, smartRewards, spork (added in smartcash-1.2.0)
 * Removed addWitnessAddress, generateToAddress, getMempoolAncestors, getMempoolDescendants, getMempoolEntry, getPoolInfo, importPrunedFunds, removePrunedFunds, signMessageWithPrivKey (removed in smartcash-1.2.0)
